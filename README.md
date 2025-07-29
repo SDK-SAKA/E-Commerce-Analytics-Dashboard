@@ -2,6 +2,8 @@
 
 A comprehensive business analytics dashboard for e-commerce operations, built with React, Vite, Tailwind CSS, and Supabase. This platform provides a centralized solution for tracking sales, managing customer data, monitoring inventory, and generating detailed reports with role-based access control.
 
+---
+
 ## 🚀 Features
 
 ### 📊 Dashboard Overview
@@ -13,6 +15,7 @@ A comprehensive business analytics dashboard for e-commerce operations, built wi
 
 ### 💰 Sales & Revenue Analytics
 - Interactive revenue trend charts
+- Sales prediction/forecast chart 
 - Sales performance tracking
 - Top-performing products analysis
 - Order value metrics
@@ -45,6 +48,8 @@ A comprehensive business analytics dashboard for e-commerce operations, built wi
 - Secure authentication with Supabase Auth
 - Protected routes and data access
 
+---
+
 ## 🛠️ Tech Stack
 
 - **Frontend**: React 18, TypeScript, Vite
@@ -56,6 +61,8 @@ A comprehensive business analytics dashboard for e-commerce operations, built wi
 - **PDF Generation**: jsPDF with autoTable
 - **Routing**: React Router DOM
 
+---
+
 ## 📋 Prerequisites
 
 Before running this project, make sure you have:
@@ -63,6 +70,8 @@ Before running this project, make sure you have:
 - Node.js (v16 or higher)
 - npm or yarn package manager
 - A Supabase account and project
+
+---
 
 ## ⚙️ Installation
 
@@ -99,6 +108,8 @@ Before running this project, make sure you have:
    npm run dev
    ```
 
+---
+
 ## 🗄️ Database Schema
 
 The application uses the following main tables:
@@ -109,6 +120,8 @@ The application uses the following main tables:
 - **orders**: Customer order records
 - **order_items**: Individual items within orders
 - **user_sessions**: Dashboard usage tracking
+
+---
 
 ## 🔑 Authentication & Roles
 
@@ -121,20 +134,25 @@ The application uses the following main tables:
 - Administrators can update user roles through the database
 - Role-based navigation and feature access
 
+---
+
 ## 📱 Usage
 
 ### For CEOs
 1. Access the full dashboard with revenue metrics
 2. View detailed sales analytics and trends
-3. Generate and export comprehensive reports
-4. Monitor all business KPIs
-5. Manage system settings
+3. View and interact with the **sales prediction/forecast chart**
+4. Generate and export comprehensive reports
+5. Monitor all business KPIs
+6. Manage system settings
 
 ### For Staff
 1. View operational dashboard metrics
 2. Manage customer information
 3. Monitor and update inventory
 4. Track daily tasks and operations
+
+---
 
 ## 🚀 Deployment
 
@@ -143,25 +161,61 @@ The application uses the following main tables:
 npm run build
 ```
 
-## 📊 Sample Data
+### Environment Variables for Production
+Ensure these are set in your deployment environment:
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_ANON_KEY`
 
-The migration includes sample data for testing:
-- 10 sample products across different categories
-- 8 sample customers with order history
-- 5 sample orders with realistic data
-- Order items linking products to orders
+---
 
 ## 🔧 Development
+
+### Test Data Generation
+
+To test the dynamic refresh functionality, you can run the test order generation script:
+
+```bash
+npm run generate-orders
+```
+
+This script will:
+- Generate realistic test orders every 5 minutes
+- Randomly select customers and products from your database
+- Calculate proper taxes, shipping, and totals
+- Update customer statistics automatically
+- Display progress in the console
+
+The application will automatically refresh every 5 minutes to show the new orders in real-time.
+
+### Available Scripts
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run generate-orders` - Start test order generation script
 
 ### Project Structure
 ```
 src/
 ├── components/          # Reusable UI components
-├── contexts/           # React contexts (Auth)
-├── lib/               # Utility functions and database
-├── pages/             # Main application pages
-├── types/             # TypeScript type definitions
-└── main.tsx           # Application entry point
+├── contexts/            # React contexts (Auth)
+├── lib/                 # Utility functions and database
+├── pages/               # Main application pages
+├── types/               # TypeScript type definitions
+└── main.tsx             # Application entry point
 ```
 
-**Built with ❤️ for modern e-commerce businesses**
+
+## 🔮 Future Enhancements
+
+- Real-time notifications
+- Advanced analytics and forecasting
+- Mobile responsive improvements
+- API integrations with e-commerce platforms
+- Advanced user management features
+- Multi-tenant support
+
+---
+
+
+
